@@ -1,0 +1,632 @@
+$date
+	Wed Jun 14 16:46:05 2023
+$end
+$version
+	ModelSim Version 2020.1
+$end
+$timescale
+	1ps
+$end
+
+$scope module testbench $end
+$var parameter 32 ! CLOCKS_PER_PULSE $end
+$var reg 4 " data_in [3:0] $end
+$var reg 1 # clk $end
+$var reg 1 $ rstn $end
+$var reg 1 % enable $end
+$var reg 1 & tx_busy $end
+$var reg 1 ' ready $end
+$var reg 4 ( data_out [3:0] $end
+$var reg 8 ) display_out [7:0] $end
+$var reg 1 * loopback $end
+$var reg 1 + ready_clr $end
+
+$scope module test_uart $end
+$var parameter 32 , CLOCKS_PER_PULSE $end
+$var wire 1 - data_in [3] $end
+$var wire 1 . data_in [2] $end
+$var wire 1 / data_in [1] $end
+$var wire 1 0 data_in [0] $end
+$var wire 1 1 data_en $end
+$var wire 1 2 clk $end
+$var wire 1 3 rstn $end
+$var reg 1 4 tx $end
+$var reg 1 5 tx_busy $end
+$var wire 1 6 ready_clr $end
+$var wire 1 7 rx $end
+$var reg 1 8 ready $end
+$var reg 4 9 led_out [3:0] $end
+$var reg 7 : display_out [6:0] $end
+$var reg 8 ; data_input [7:0] $end
+$var reg 8 < data_output [7:0] $end
+
+$scope module uart_tx $end
+$var parameter 32 = CLOCKS_PER_PULSE $end
+$var wire 1 > data_in [7] $end
+$var wire 1 ? data_in [6] $end
+$var wire 1 @ data_in [5] $end
+$var wire 1 A data_in [4] $end
+$var wire 1 B data_in [3] $end
+$var wire 1 C data_in [2] $end
+$var wire 1 D data_in [1] $end
+$var wire 1 E data_in [0] $end
+$var wire 1 1 data_en $end
+$var wire 1 2 clk $end
+$var wire 1 3 rstn $end
+$var reg 1 F tx $end
+$var reg 1 G tx_busy $end
+$var integer 32 H state $end
+$var reg 8 I data [7:0] $end
+$var reg 3 J c_bits [2:0] $end
+$var reg 2 K c_clocks [1:0] $end
+$upscope $end
+
+$scope module uart_rx $end
+$var parameter 32 L CLOCKS_PER_PULSE $end
+$var wire 1 2 clk $end
+$var wire 1 3 rstn $end
+$var wire 1 6 ready_clr $end
+$var wire 1 7 rx $end
+$var reg 1 M ready $end
+$var reg 8 N data_out [7:0] $end
+$var integer 32 O state $end
+$var reg 3 P c_bits [2:0] $end
+$var reg 2 Q c_clocks [1:0] $end
+$var reg 8 R temp_data [7:0] $end
+$var reg 1 S rx_sync $end
+$upscope $end
+
+$scope module converter $end
+$var wire 1 T data_in [3] $end
+$var wire 1 U data_in [2] $end
+$var wire 1 V data_in [1] $end
+$var wire 1 W data_in [0] $end
+$var reg 7 X data_out [6:0] $end
+$var reg 112 Y lut_7seg [111:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1 "
+0#
+1$
+0%
+0&
+0'
+b0 (
+b1000000 )
+1*
+1+
+14
+05
+08
+b0 9
+b1000000 :
+b1 ;
+b0 <
+1F
+0G
+b0 I
+b0 J
+b0 K
+0M
+b0 N
+b0 P
+b0 Q
+b0 R
+xS
+b1000000 X
+b1101111111111100001111111101110110111001101001111101101100001100111111 Y
+b100 !
+b100 ,
+b100 =
+b100 L
+b0 H
+b0 O
+10
+0/
+0.
+0-
+01
+02
+17
+16
+13
+1E
+0D
+0C
+0B
+0A
+0@
+0?
+0>
+0W
+0V
+0U
+0T
+$end
+#1000
+1#
+12
+b1 H
+b1 I
+1S
+1G
+15
+1&
+#2000
+0#
+02
+0$
+03
+b0 I
+b0 H
+0G
+05
+0&
+#3000
+1#
+12
+#4000
+0#
+02
+1$
+13
+#5000
+1#
+12
+b1 H
+b1 I
+1G
+15
+1&
+#6000
+0#
+02
+#7000
+1#
+12
+0F
+b1 K
+04
+0*
+07
+#8000
+0#
+02
+#9000
+1#
+12
+1%
+b10 K
+0S
+11
+#10000
+0#
+02
+#11000
+1#
+12
+b11 K
+b1 O
+#12000
+0#
+02
+#13000
+1#
+12
+b10 H
+b0 K
+b1 Q
+#14000
+0#
+02
+#15000
+1#
+12
+1F
+b1 K
+b10 O
+b0 Q
+14
+1*
+17
+#16000
+0#
+02
+#17000
+1#
+12
+b10 K
+1S
+b1 Q
+#18000
+0#
+02
+#19000
+1#
+12
+b11 K
+b10 Q
+#20000
+0#
+02
+#21000
+1#
+12
+b0 K
+b1 J
+b11 Q
+#22000
+0#
+02
+#23000
+1#
+12
+0F
+b1 K
+b0 Q
+b1 R
+b1 P
+b1 N
+04
+0*
+b1 <
+b1 9
+07
+b1 (
+1W
+b1111001 X
+b1111001 :
+b1111001 )
+#24000
+0#
+02
+#25000
+1#
+12
+b10 K
+0S
+b1 Q
+#26000
+0#
+02
+#27000
+1#
+12
+b11 K
+b10 Q
+#28000
+0#
+02
+#29000
+1#
+12
+b0 K
+b10 J
+b11 Q
+#30000
+0#
+02
+#31000
+1#
+12
+b1 K
+b0 Q
+b10 P
+#32000
+0#
+02
+#33000
+1#
+12
+b10 K
+b1 Q
+#34000
+0#
+02
+#35000
+1#
+12
+b11 K
+b10 Q
+#36000
+0#
+02
+#37000
+1#
+12
+b0 K
+b11 J
+b11 Q
+#38000
+0#
+02
+#39000
+1#
+12
+b1 K
+b0 Q
+b11 P
+#40000
+0#
+02
+#41000
+1#
+12
+b10 K
+b1 Q
+#42000
+0#
+02
+#43000
+1#
+12
+b11 K
+b10 Q
+#44000
+0#
+02
+#45000
+1#
+12
+b0 K
+b100 J
+b11 Q
+#46000
+0#
+02
+#47000
+1#
+12
+b1 K
+b0 Q
+b100 P
+#48000
+0#
+02
+#49000
+1#
+12
+b10 K
+b1 Q
+#50000
+0#
+02
+#51000
+1#
+12
+b11 K
+b10 Q
+#52000
+0#
+02
+#53000
+1#
+12
+b0 K
+b101 J
+b11 Q
+#54000
+0#
+02
+#55000
+1#
+12
+b1 K
+b0 Q
+b101 P
+#56000
+0#
+02
+#57000
+1#
+12
+b10 K
+b1 Q
+#58000
+0#
+02
+#59000
+1#
+12
+b11 K
+b10 Q
+#60000
+0#
+02
+#61000
+1#
+12
+b0 K
+b110 J
+b11 Q
+#62000
+0#
+02
+#63000
+1#
+12
+b1 K
+b0 Q
+b110 P
+#64000
+0#
+02
+#65000
+1#
+12
+b10 K
+b1 Q
+#66000
+0#
+02
+#67000
+1#
+12
+b11 K
+b10 Q
+#68000
+0#
+02
+#69000
+1#
+12
+b0 K
+b111 J
+b11 Q
+#70000
+0#
+02
+#71000
+1#
+12
+b1 K
+b0 Q
+b111 P
+#72000
+0#
+02
+#73000
+1#
+12
+b10 K
+b1 Q
+#74000
+0#
+02
+#75000
+1#
+12
+b11 K
+b10 Q
+#76000
+0#
+02
+#77000
+1#
+12
+b0 K
+b11 H
+b11 Q
+#78000
+0#
+02
+#79000
+1#
+12
+1F
+b1 K
+b0 Q
+b11 O
+b0 P
+14
+1*
+17
+#80000
+0#
+02
+#81000
+1#
+12
+b10 K
+1S
+b1 Q
+#82000
+0#
+02
+#83000
+1#
+12
+b11 K
+b10 Q
+#84000
+0#
+02
+#85000
+1#
+12
+b0 H
+b0 K
+b11 Q
+0G
+05
+0&
+#86000
+0#
+02
+#87000
+1#
+12
+1M
+b0 O
+b0 Q
+18
+1'
+#88000
+0#
+02
+#89000
+1#
+12
+#90000
+0#
+02
+#91000
+1#
+12
+#92000
+0#
+02
+#93000
+1#
+12
+#94000
+0#
+02
+#95000
+1#
+12
+#96000
+0#
+02
+#97000
+1#
+12
+0$
+03
+b0 J
+b0 I
+b0 R
+0M
+08
+b0 N
+b0 <
+0'
+b0 9
+b0 (
+0W
+b1000000 X
+b1000000 :
+b1000000 )
+#98000
+0#
+02
+#99000
+1#
+12
+1$
+b10 "
+0%
+00
+1/
+01
+b10 ;
+0E
+1D
+13
+#100000
+0#
+02

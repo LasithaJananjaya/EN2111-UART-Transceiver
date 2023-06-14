@@ -1,5 +1,5 @@
 Analysis & Elaboration report for EN2111_lab4
-Thu Jun  1 11:15:45 2023
+Wed Jun 14 16:41:31 2023
 Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
@@ -9,11 +9,14 @@ Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
   1. Legal Notice
   2. Analysis & Elaboration Summary
   3. Parallel Compilation
-  4. Parameter Settings for User Entity Instance: Top-level Entity: |UART_RX_TB
-  5. Parameter Settings for User Entity Instance: UART_RX:UART_RX_INST
-  6. Analysis & Elaboration Settings
-  7. Port Connectivity Checks: "UART_RX:UART_RX_INST"
-  8. Analysis & Elaboration Messages
+  4. Parameter Settings for User Entity Instance: uart:test_uart
+  5. Parameter Settings for User Entity Instance: uart:test_uart|transmitter:uart_tx
+  6. Parameter Settings for User Entity Instance: uart:test_uart|receiver:uart_rx
+  7. Analysis & Elaboration Settings
+  8. Port Connectivity Checks: "uart:test_uart|receiver:uart_rx"
+  9. Port Connectivity Checks: "uart:test_uart|transmitter:uart_tx"
+ 10. Port Connectivity Checks: "uart:test_uart"
+ 11. Analysis & Elaboration Messages
 
 
 
@@ -40,10 +43,10 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                                      ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Elaboration Status      ; Successful - Thu Jun  1 11:15:45 2023          ;
+; Analysis & Elaboration Status      ; Successful - Wed Jun 14 16:41:31 2023          ;
 ; Quartus Prime Version              ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
 ; Revision Name                      ; EN2111_lab4                                    ;
-; Top-level Entity Name              ; UART_RX_TB                                     ;
+; Top-level Entity Name              ; testbench                                      ;
 ; Family                             ; Cyclone IV E                                   ;
 ; Total logic elements               ; N/A until Partition Merge                      ;
 ;     Total combinational functions  ; N/A until Partition Merge                      ;
@@ -73,25 +76,33 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |UART_RX_TB ;
-+-------------------+-------+------------------------------------------------+
-; Parameter Name    ; Value ; Type                                           ;
-+-------------------+-------+------------------------------------------------+
-; c_CLOCK_PERIOD_NS ; 40    ; Signed Integer                                 ;
-; c_CLKS_PER_BIT    ; 217   ; Signed Integer                                 ;
-; c_BIT_PERIOD      ; 8600  ; Signed Integer                                 ;
-+-------------------+-------+------------------------------------------------+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: uart:test_uart ;
++------------------+-------+----------------------------------+
+; Parameter Name   ; Value ; Type                             ;
++------------------+-------+----------------------------------+
+; CLOCKS_PER_PULSE ; 4     ; Signed Integer                   ;
++------------------+-------+----------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: UART_RX:UART_RX_INST ;
-+----------------+-------+------------------------------------------+
-; Parameter Name ; Value ; Type                                     ;
-+----------------+-------+------------------------------------------+
-; CLKS_PER_BIT   ; 217   ; Signed Integer                           ;
-+----------------+-------+------------------------------------------+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: uart:test_uart|transmitter:uart_tx ;
++------------------+-------+------------------------------------------------------+
+; Parameter Name   ; Value ; Type                                                 ;
++------------------+-------+------------------------------------------------------+
+; CLOCKS_PER_PULSE ; 4     ; Signed Integer                                       ;
++------------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: uart:test_uart|receiver:uart_rx ;
++------------------+-------+---------------------------------------------------+
+; Parameter Name   ; Value ; Type                                              ;
++------------------+-------+---------------------------------------------------+
+; CLOCKS_PER_PULSE ; 4     ; Signed Integer                                    ;
++------------------+-------+---------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -100,8 +111,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                           ; EP4CE22F17C6       ;                    ;
-; Top-level entity name                                            ; UART_RX_TB         ; EN2111_lab4        ;
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; testbench          ; EN2111_lab4        ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -181,14 +192,32 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------------------------------------------------------+--------------------+--------------------+
 
 
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "uart:test_uart|receiver:uart_rx"                                                              ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; data_out[7..4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------+
+; Port Connectivity Checks: "uart:test_uart|transmitter:uart_tx" ;
++---------------+-------+----------+-----------------------------+
+; Port          ; Type  ; Severity ; Details                     ;
++---------------+-------+----------+-----------------------------+
+; data_in[7..4] ; Input ; Info     ; Stuck at GND                ;
++---------------+-------+----------+-----------------------------+
+
+
 +-----------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "UART_RX:UART_RX_INST"                                                                      ;
+; Port Connectivity Checks: "uart:test_uart"                                                                            ;
 +-------------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port        ; Type   ; Severity ; Details                                                                             ;
 +-------------+--------+----------+-------------------------------------------------------------------------------------+
-; i_RX_Serial ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; o_RX_DV     ; Output ; Info     ; Explicitly unconnected                                                              ;
-; o_RX_Byte   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; tx_busy     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; ready_clr   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; display_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +-------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
@@ -198,35 +227,46 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
-    Info: Processing started: Thu Jun  1 11:15:38 2023
+    Info: Processing started: Wed Jun 14 16:41:24 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off EN2111_lab4 -c EN2111_lab4 --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file uart_rx.v
-    Info (12023): Found entity 1: UART_RX File: D:/EN2111-UART-Transceiver/UART_RX.v Line: 14
-Info (12021): Found 1 design units, including 1 entities, in source file uart_rx_tb.v
-    Info (12023): Found entity 1: UART_RX_TB File: D:/EN2111-UART-Transceiver/UART_RX_TB.v Line: 9
-Warning (10222): Verilog HDL Parameter Declaration warning at UART_RX.v(23): Parameter Declaration in module "UART_RX" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/EN2111-UART-Transceiver/UART_RX.v Line: 23
-Warning (10222): Verilog HDL Parameter Declaration warning at UART_RX.v(24): Parameter Declaration in module "UART_RX" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/EN2111-UART-Transceiver/UART_RX.v Line: 24
-Warning (10222): Verilog HDL Parameter Declaration warning at UART_RX.v(25): Parameter Declaration in module "UART_RX" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/EN2111-UART-Transceiver/UART_RX.v Line: 25
-Warning (10222): Verilog HDL Parameter Declaration warning at UART_RX.v(26): Parameter Declaration in module "UART_RX" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/EN2111-UART-Transceiver/UART_RX.v Line: 26
-Warning (10222): Verilog HDL Parameter Declaration warning at UART_RX.v(27): Parameter Declaration in module "UART_RX" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/EN2111-UART-Transceiver/UART_RX.v Line: 27
-Info (12127): Elaborating entity "UART_RX_TB" for the top level hierarchy
-Warning (10755): Verilog HDL warning at UART_RX_TB.v(56): assignments to r_Clock create a combinational loop File: D:/EN2111-UART-Transceiver/UART_RX_TB.v Line: 56
-Info (10648): Verilog HDL Display System Task info at UART_RX_TB.v(69): Test Passed - Correct Byte Received File: D:/EN2111-UART-Transceiver/UART_RX_TB.v Line: 69
-Info (10648): Verilog HDL Display System Task info at UART_RX_TB.v(71): Test Failed - Incorrect Byte Received File: D:/EN2111-UART-Transceiver/UART_RX_TB.v Line: 71
-Warning (10175): Verilog HDL warning at UART_RX_TB.v(72): ignoring unsupported system task File: D:/EN2111-UART-Transceiver/UART_RX_TB.v Line: 72
-Warning (10175): Verilog HDL warning at UART_RX_TB.v(78): ignoring unsupported system task File: D:/EN2111-UART-Transceiver/UART_RX_TB.v Line: 78
-Warning (10175): Verilog HDL warning at UART_RX_TB.v(79): ignoring unsupported system task File: D:/EN2111-UART-Transceiver/UART_RX_TB.v Line: 79
-Info (12128): Elaborating entity "UART_RX" for hierarchy "UART_RX:UART_RX_INST" File: D:/EN2111-UART-Transceiver/UART_RX_TB.v Line: 53
-Warning (10230): Verilog HDL assignment warning at UART_RX.v(68): truncated value with size 32 to match size of target (8) File: D:/EN2111-UART-Transceiver/UART_RX.v Line: 68
-Warning (10230): Verilog HDL assignment warning at UART_RX.v(79): truncated value with size 32 to match size of target (8) File: D:/EN2111-UART-Transceiver/UART_RX.v Line: 79
-Warning (10230): Verilog HDL assignment warning at UART_RX.v(90): truncated value with size 32 to match size of target (3) File: D:/EN2111-UART-Transceiver/UART_RX.v Line: 90
-Warning (10230): Verilog HDL assignment warning at UART_RX.v(108): truncated value with size 32 to match size of target (8) File: D:/EN2111-UART-Transceiver/UART_RX.v Line: 108
+Info (12021): Found 1 design units, including 1 entities, in source file receiver.sv
+    Info (12023): Found entity 1: receiver File: D:/EN2111-UART-Transceiver/receiver.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file binary_to_7seg.sv
+    Info (12023): Found entity 1: binary_to_7seg File: D:/EN2111-UART-Transceiver/binary_to_7seg.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file testbench.sv
+    Info (12023): Found entity 1: testbench File: D:/EN2111-UART-Transceiver/testbench.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file trans_rec_tb.sv
+    Info (12023): Found entity 1: trans_rec_tb File: D:/EN2111-UART-Transceiver/trans_rec_tb.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file transmitter.sv
+    Info (12023): Found entity 1: transmitter File: D:/EN2111-UART-Transceiver/transmitter.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file transmitter_tb.sv
+    Info (12023): Found entity 1: transmitter_tb File: D:/EN2111-UART-Transceiver/transmitter_tb.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file uart.sv
+    Info (12023): Found entity 1: uart File: D:/EN2111-UART-Transceiver/uart.sv Line: 1
+Info (12127): Elaborating entity "testbench" for the top level hierarchy
+Warning (10755): Verilog HDL warning at testbench.sv(35): assignments to clk create a combinational loop File: D:/EN2111-UART-Transceiver/testbench.sv Line: 35
+Warning (10175): Verilog HDL warning at testbench.sv(39): ignoring unsupported system task File: D:/EN2111-UART-Transceiver/testbench.sv Line: 39
+Warning (10175): Verilog HDL warning at testbench.sv(40): ignoring unsupported system task File: D:/EN2111-UART-Transceiver/testbench.sv Line: 40
+Warning (10175): Verilog HDL warning at testbench.sv(53): ignoring unsupported system task File: D:/EN2111-UART-Transceiver/testbench.sv Line: 53
+Warning (10175): Verilog HDL warning at testbench.sv(57): ignoring unsupported system task File: D:/EN2111-UART-Transceiver/testbench.sv Line: 57
+Info (12128): Elaborating entity "uart" for hierarchy "uart:test_uart" File: D:/EN2111-UART-Transceiver/testbench.sv Line: 31
+Info (12128): Elaborating entity "transmitter" for hierarchy "uart:test_uart|transmitter:uart_tx" File: D:/EN2111-UART-Transceiver/uart.sv Line: 27
+Warning (10230): Verilog HDL assignment warning at transmitter.sv(41): truncated value with size 32 to match size of target (2) File: D:/EN2111-UART-Transceiver/transmitter.sv Line: 41
+Warning (10230): Verilog HDL assignment warning at transmitter.sv(50): truncated value with size 32 to match size of target (3) File: D:/EN2111-UART-Transceiver/transmitter.sv Line: 50
+Warning (10230): Verilog HDL assignment warning at transmitter.sv(55): truncated value with size 32 to match size of target (2) File: D:/EN2111-UART-Transceiver/transmitter.sv Line: 55
+Warning (10230): Verilog HDL assignment warning at transmitter.sv(64): truncated value with size 32 to match size of target (2) File: D:/EN2111-UART-Transceiver/transmitter.sv Line: 64
+Info (12128): Elaborating entity "receiver" for hierarchy "uart:test_uart|receiver:uart_rx" File: D:/EN2111-UART-Transceiver/uart.sv Line: 36
+Warning (10230): Verilog HDL assignment warning at receiver.sv(46): truncated value with size 32 to match size of target (2) File: D:/EN2111-UART-Transceiver/receiver.sv Line: 46
+Warning (10230): Verilog HDL assignment warning at receiver.sv(58): truncated value with size 32 to match size of target (3) File: D:/EN2111-UART-Transceiver/receiver.sv Line: 58
+Warning (10230): Verilog HDL assignment warning at receiver.sv(61): truncated value with size 32 to match size of target (2) File: D:/EN2111-UART-Transceiver/receiver.sv Line: 61
+Warning (10230): Verilog HDL assignment warning at receiver.sv(71): truncated value with size 32 to match size of target (2) File: D:/EN2111-UART-Transceiver/receiver.sv Line: 71
+Info (12128): Elaborating entity "binary_to_7seg" for hierarchy "uart:test_uart|binary_to_7seg:converter" File: D:/EN2111-UART-Transceiver/uart.sv Line: 41
 Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 14 warnings
-    Info: Peak virtual memory: 4715 megabytes
-    Info: Processing ended: Thu Jun  1 11:15:45 2023
+    Info: Peak virtual memory: 4726 megabytes
+    Info: Processing ended: Wed Jun 14 16:41:31 2023
     Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:19
+    Info: Total CPU time (on all processors): 00:00:20
 
 

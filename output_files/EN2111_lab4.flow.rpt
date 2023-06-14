@@ -1,5 +1,5 @@
 Flow report for EN2111_lab4
-Thu Jun  1 11:15:45 2023
+Wed Jun 14 16:41:31 2023
 Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
@@ -41,12 +41,12 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +------------------------------------+------------------------------------------------+
-; Flow Status                        ; Successful - Thu Jun  1 11:15:45 2023          ;
+; Flow Status                        ; Successful - Wed Jun 14 16:41:31 2023          ;
 ; Quartus Prime Version              ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
 ; Revision Name                      ; EN2111_lab4                                    ;
-; Top-level Entity Name              ; UART_RX_TB                                     ;
+; Top-level Entity Name              ; testbench                                      ;
 ; Family                             ; Cyclone IV E                                   ;
-; Device                             ; EP4CE22F17C6                                   ;
+; Device                             ; EP4CE115F29C7                                  ;
 ; Timing Models                      ; Final                                          ;
 ; Total logic elements               ; N/A until Partition Merge                      ;
 ;     Total combinational functions  ; N/A until Partition Merge                      ;
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/01/2023 11:15:39 ;
+; Start date & time ; 06/14/2023 16:41:24 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; EN2111_lab4         ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 10995770589202.168559833930924         ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 145253511860734.168674108402896        ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -86,11 +86,13 @@ https://fpgasoftware.intel.com/eula.
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation                    ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --                                ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --                                ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; UART_RX_TB  ; Top                               ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; UART_RX_TB  ; Top                               ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; UART_RX_TB  ; Top                               ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; testbench   ; Top                               ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; testbench   ; Top                               ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; testbench   ; Top                               ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --                                ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --                                ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --                                ;
-; TOP_LEVEL_ENTITY                    ; UART_RX_TB                             ; EN2111_lab4   ; --          ; --                                ;
+; TOP_LEVEL_ENTITY                    ; testbench                              ; EN2111_lab4   ; --          ; --                                ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 
 
@@ -99,8 +101,8 @@ https://fpgasoftware.intel.com/eula.
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:07     ; 1.0                     ; 4715 MB             ; 00:00:19                           ;
-; Total                  ; 00:00:07     ; --                      ; --                  ; 00:00:19                           ;
+; Analysis & Elaboration ; 00:00:07     ; 1.0                     ; 4726 MB             ; 00:00:20                           ;
+; Total                  ; 00:00:07     ; --                      ; --                  ; 00:00:20                           ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

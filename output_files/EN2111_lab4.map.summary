@@ -1,7 +1,7 @@
-Analysis & Elaboration Status : Successful - Thu Jun  1 11:15:45 2023
+Analysis & Elaboration Status : Successful - Wed Jun 14 16:41:31 2023
 Quartus Prime Version : 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 Revision Name : EN2111_lab4
-Top-level Entity Name : UART_RX_TB
+Top-level Entity Name : testbench
 Family : Cyclone IV E
 Total logic elements : N/A until Partition Merge
     Total combinational functions : N/A until Partition Merge
