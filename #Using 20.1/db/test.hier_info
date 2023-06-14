@@ -1,7 +1,4 @@
-|testbench
-
-
-|testbench|uart:test_uart
+|uart
 data_in[0] => data_input[0].IN1
 data_in[1] => data_input[1].IN1
 data_in[2] => data_input[2].IN1
@@ -9,25 +6,25 @@ data_in[3] => data_input[3].IN1
 data_en => data_en.IN1
 clk => clk.IN2
 rstn => rstn.IN2
-tx <= transmitter:uart_tx.tx
-tx_busy <= transmitter:uart_tx.tx_busy
+tx << transmitter:uart_tx.tx
+tx_busy << transmitter:uart_tx.tx_busy
 ready_clr => ready_clr.IN1
 rx => rx.IN1
-ready <= receiver:uart_rx.ready
-led_out[0] <= data_output[0].DB_MAX_OUTPUT_PORT_TYPE
-led_out[1] <= data_output[1].DB_MAX_OUTPUT_PORT_TYPE
-led_out[2] <= data_output[2].DB_MAX_OUTPUT_PORT_TYPE
-led_out[3] <= data_output[3].DB_MAX_OUTPUT_PORT_TYPE
-display_out[0] <= binary_to_7seg:converter.data_out
-display_out[1] <= binary_to_7seg:converter.data_out
-display_out[2] <= binary_to_7seg:converter.data_out
-display_out[3] <= binary_to_7seg:converter.data_out
-display_out[4] <= binary_to_7seg:converter.data_out
-display_out[5] <= binary_to_7seg:converter.data_out
-display_out[6] <= binary_to_7seg:converter.data_out
+ready << receiver:uart_rx.ready
+led_out[0] << data_output[0].DB_MAX_OUTPUT_PORT_TYPE
+led_out[1] << data_output[1].DB_MAX_OUTPUT_PORT_TYPE
+led_out[2] << data_output[2].DB_MAX_OUTPUT_PORT_TYPE
+led_out[3] << data_output[3].DB_MAX_OUTPUT_PORT_TYPE
+display_out[0] << binary_to_7seg:converter.data_out
+display_out[1] << binary_to_7seg:converter.data_out
+display_out[2] << binary_to_7seg:converter.data_out
+display_out[3] << binary_to_7seg:converter.data_out
+display_out[4] << binary_to_7seg:converter.data_out
+display_out[5] << binary_to_7seg:converter.data_out
+display_out[6] << binary_to_7seg:converter.data_out
 
 
-|testbench|uart:test_uart|transmitter:uart_tx
+|uart|transmitter:uart_tx
 data_in[0] => data.DATAB
 data_in[1] => data.DATAB
 data_in[2] => data.DATAB
@@ -81,6 +78,17 @@ data_en => c_bits.OUTPUTSELECT
 data_en => c_bits.OUTPUTSELECT
 data_en => c_clocks.OUTPUTSELECT
 data_en => c_clocks.OUTPUTSELECT
+data_en => c_clocks.OUTPUTSELECT
+data_en => c_clocks.OUTPUTSELECT
+data_en => c_clocks.OUTPUTSELECT
+data_en => c_clocks.OUTPUTSELECT
+data_en => c_clocks.OUTPUTSELECT
+data_en => c_clocks.OUTPUTSELECT
+data_en => c_clocks.OUTPUTSELECT
+data_en => c_clocks.OUTPUTSELECT
+data_en => c_clocks.OUTPUTSELECT
+data_en => c_clocks.OUTPUTSELECT
+data_en => c_clocks.OUTPUTSELECT
 data_en => tx.OUTPUTSELECT
 clk => state[0].CLK
 clk => state[1].CLK
@@ -128,6 +136,17 @@ clk => c_bits[1].CLK
 clk => c_bits[2].CLK
 clk => c_clocks[0].CLK
 clk => c_clocks[1].CLK
+clk => c_clocks[2].CLK
+clk => c_clocks[3].CLK
+clk => c_clocks[4].CLK
+clk => c_clocks[5].CLK
+clk => c_clocks[6].CLK
+clk => c_clocks[7].CLK
+clk => c_clocks[8].CLK
+clk => c_clocks[9].CLK
+clk => c_clocks[10].CLK
+clk => c_clocks[11].CLK
+clk => c_clocks[12].CLK
 rstn => state[0].ACLR
 rstn => state[1].ACLR
 rstn => state[2].ACLR
@@ -174,11 +193,22 @@ rstn => c_bits[1].ACLR
 rstn => c_bits[2].ACLR
 rstn => c_clocks[0].ACLR
 rstn => c_clocks[1].ACLR
+rstn => c_clocks[2].ACLR
+rstn => c_clocks[3].ACLR
+rstn => c_clocks[4].ACLR
+rstn => c_clocks[5].ACLR
+rstn => c_clocks[6].ACLR
+rstn => c_clocks[7].ACLR
+rstn => c_clocks[8].ACLR
+rstn => c_clocks[9].ACLR
+rstn => c_clocks[10].ACLR
+rstn => c_clocks[11].ACLR
+rstn => c_clocks[12].ACLR
 tx <= tx~reg0.DB_MAX_OUTPUT_PORT_TYPE
 tx_busy <= Equal6.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|testbench|uart:test_uart|receiver:uart_rx
+|uart|receiver:uart_rx
 clk => rx_sync.CLK
 clk => state[0].CLK
 clk => state[1].CLK
@@ -226,6 +256,17 @@ clk => c_bits[1].CLK
 clk => c_bits[2].CLK
 clk => c_clocks[0].CLK
 clk => c_clocks[1].CLK
+clk => c_clocks[2].CLK
+clk => c_clocks[3].CLK
+clk => c_clocks[4].CLK
+clk => c_clocks[5].CLK
+clk => c_clocks[6].CLK
+clk => c_clocks[7].CLK
+clk => c_clocks[8].CLK
+clk => c_clocks[9].CLK
+clk => c_clocks[10].CLK
+clk => c_clocks[11].CLK
+clk => c_clocks[12].CLK
 rstn => state[0].ACLR
 rstn => state[1].ACLR
 rstn => state[2].ACLR
@@ -272,6 +313,17 @@ rstn => c_bits[1].ACLR
 rstn => c_bits[2].ACLR
 rstn => c_clocks[0].ACLR
 rstn => c_clocks[1].ACLR
+rstn => c_clocks[2].ACLR
+rstn => c_clocks[3].ACLR
+rstn => c_clocks[4].ACLR
+rstn => c_clocks[5].ACLR
+rstn => c_clocks[6].ACLR
+rstn => c_clocks[7].ACLR
+rstn => c_clocks[8].ACLR
+rstn => c_clocks[9].ACLR
+rstn => c_clocks[10].ACLR
+rstn => c_clocks[11].ACLR
+rstn => c_clocks[12].ACLR
 rstn => rx_sync.ENA
 ready_clr => ~NO_FANOUT~
 rx => rx_sync.DATAIN
@@ -286,7 +338,7 @@ data_out[6] <= temp_data[6].DB_MAX_OUTPUT_PORT_TYPE
 data_out[7] <= temp_data[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|testbench|uart:test_uart|binary_to_7seg:converter
+|uart|binary_to_7seg:converter
 data_in[0] => Mux0.IN19
 data_in[0] => Mux1.IN19
 data_in[0] => Mux2.IN19
