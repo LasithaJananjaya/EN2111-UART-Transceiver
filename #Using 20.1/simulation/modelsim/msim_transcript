@@ -12,68 +12,52 @@
 # 
 # vlog -sv -work work +incdir+D:/EN2111-UART-Transceiver/#Using\ 20.1 {D:/EN2111-UART-Transceiver/#Using 20.1/binary_to_7seg.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 10:27:19 on Jun 15,2023
+# Start time: 10:58:20 on Jul 14,2023
 # vlog -reportprogress 300 -sv -work work "+incdir+D:/EN2111-UART-Transceiver/#Using 20.1" D:/EN2111-UART-Transceiver/#Using 20.1/binary_to_7seg.sv 
 # -- Compiling module binary_to_7seg
 # 
 # Top level modules:
 # 	binary_to_7seg
-# End time: 10:27:19 on Jun 15,2023, Elapsed time: 0:00:00
+# End time: 10:58:20 on Jul 14,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+D:/EN2111-UART-Transceiver/#Using\ 20.1 {D:/EN2111-UART-Transceiver/#Using 20.1/uart.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 10:27:19 on Jun 15,2023
+# Start time: 10:58:20 on Jul 14,2023
 # vlog -reportprogress 300 -sv -work work "+incdir+D:/EN2111-UART-Transceiver/#Using 20.1" D:/EN2111-UART-Transceiver/#Using 20.1/uart.sv 
 # -- Compiling module uart
 # 
 # Top level modules:
 # 	uart
-# End time: 10:27:19 on Jun 15,2023, Elapsed time: 0:00:00
+# End time: 10:58:20 on Jul 14,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+D:/EN2111-UART-Transceiver/#Using\ 20.1 {D:/EN2111-UART-Transceiver/#Using 20.1/transmitter.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 10:27:19 on Jun 15,2023
+# Start time: 10:58:20 on Jul 14,2023
 # vlog -reportprogress 300 -sv -work work "+incdir+D:/EN2111-UART-Transceiver/#Using 20.1" D:/EN2111-UART-Transceiver/#Using 20.1/transmitter.sv 
 # -- Compiling module transmitter
 # 
 # Top level modules:
 # 	transmitter
-# End time: 10:27:19 on Jun 15,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+D:/EN2111-UART-Transceiver/#Using\ 20.1 {D:/EN2111-UART-Transceiver/#Using 20.1/testbench.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 10:27:19 on Jun 15,2023
-# vlog -reportprogress 300 -sv -work work "+incdir+D:/EN2111-UART-Transceiver/#Using 20.1" D:/EN2111-UART-Transceiver/#Using 20.1/testbench.sv 
-# -- Compiling module testbench
-# 
-# Top level modules:
-# 	testbench
-# End time: 10:27:19 on Jun 15,2023, Elapsed time: 0:00:00
+# End time: 10:58:20 on Jul 14,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+D:/EN2111-UART-Transceiver/#Using\ 20.1 {D:/EN2111-UART-Transceiver/#Using 20.1/receiver.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 10:27:19 on Jun 15,2023
+# Start time: 10:58:20 on Jul 14,2023
 # vlog -reportprogress 300 -sv -work work "+incdir+D:/EN2111-UART-Transceiver/#Using 20.1" D:/EN2111-UART-Transceiver/#Using 20.1/receiver.sv 
 # -- Compiling module receiver
 # 
 # Top level modules:
 # 	receiver
-# End time: 10:27:19 on Jun 15,2023, Elapsed time: 0:00:00
+# End time: 10:58:20 on Jul 14,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-vsim work.testbench
-# vsim work.testbench 
-# Start time: 10:27:39 on Jun 15,2023
+vsim work.uart
+# vsim work.uart 
+# Start time: 10:58:53 on Jul 14,2023
 # Loading sv_std.std
-# Loading work.testbench
 # Loading work.uart
 # Loading work.transmitter
 # Loading work.receiver
 # Loading work.binary_to_7seg
-# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (8) for port 'display_out'. The port definition is at: D:/EN2111-UART-Transceiver/#Using 20.1/uart.sv(15).
-#    Time: 0 ps  Iteration: 0  Instance: /testbench/test_uart File: D:/EN2111-UART-Transceiver/#Using 20.1/testbench.sv Line: 20
-add wave -position insertpoint sim:/testbench/*
-run
-run
-# End time: 11:38:05 on Jun 15,2023, Elapsed time: 1:10:26
-# Errors: 0, Warnings: 1
+# End time: 10:59:08 on Jul 14,2023, Elapsed time: 0:00:15
+# Errors: 0, Warnings: 0

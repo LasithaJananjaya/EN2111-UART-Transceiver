@@ -11,7 +11,7 @@ cModel Technology
 Z0 dD:/EN2111-UART-Transceiver/#Using 20.1/simulation/modelsim
 vbinary_to_7seg
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1686805039
+Z2 !s110 1689312500
 !i10b 1
 !s100 ^Y6cT?kNIU9F`Q>6fa]?S3
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -28,7 +28,7 @@ Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1686805039.000000
+Z6 !s108 1689312500.000000
 !s107 D:/EN2111-UART-Transceiver/#Using 20.1/binary_to_7seg.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/EN2111-UART-Transceiver/#Using 20.1|D:/EN2111-UART-Transceiver/#Using 20.1/binary_to_7seg.sv|
 !i113 1
@@ -48,7 +48,7 @@ R0
 w1686735079
 8D:/EN2111-UART-Transceiver/#Using 20.1/receiver.sv
 FD:/EN2111-UART-Transceiver/#Using 20.1/receiver.sv
-!i122 4
+!i122 3
 L0 1 82
 R5
 r1
@@ -57,32 +57,6 @@ r1
 R6
 !s107 D:/EN2111-UART-Transceiver/#Using 20.1/receiver.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/EN2111-UART-Transceiver/#Using 20.1|D:/EN2111-UART-Transceiver/#Using 20.1/receiver.sv|
-!i113 1
-R7
-R8
-R9
-vtestbench
-R1
-R2
-!i10b 1
-!s100 QX@iKPcCQKUYODZf_]h>32
-R3
-I3MnV2=J77HmYjF15;aZjk3
-R4
-S1
-R0
-w1686734241
-8D:/EN2111-UART-Transceiver/#Using 20.1/testbench.sv
-FD:/EN2111-UART-Transceiver/#Using 20.1/testbench.sv
-!i122 3
-L0 3 65
-R5
-r1
-!s85 0
-31
-R6
-!s107 D:/EN2111-UART-Transceiver/#Using 20.1/testbench.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/EN2111-UART-Transceiver/#Using 20.1|D:/EN2111-UART-Transceiver/#Using 20.1/testbench.sv|
 !i113 1
 R7
 R8
